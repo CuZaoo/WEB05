@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>充值网_注册</title>
+<!-- 标题栏： -->
+<link rel="icon"
+	href="https://www.easyicon.net/api/resizeApi.php?id=19315&size=128"
+	type="image/x-icon">
+<!-- 收藏夹： -->
+<link rel="shortcut icon"
+	href="https://www.easyicon.net/api/resizeApi.php?id=19315&size=128"
+	type="image/x-icon">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<link
+	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/mycss.css">
+<script
+	src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script
+	src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script
+	src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<script>
+	$().ready(function() {
+		// 在键盘按下并释放及提交后验证提交表单
+		$("#registerForm").validate({
+			rules : {
+				account : {
+					required : true,
+					minlength : 5
+				},
+				name : {
+					required : true,
+					minlength: 2
+				},
+				password : {
+					required : true,
+					minlength : 5
+				},
+				repassword : {
+					required : true,
+					minlength : 5,
+					equalTo : "#password"
+				},
+				email : {
+					required : true,
+					email : true
+				},
+			},
+			messages : {
+				account : {
+					required : "请输入用户名",
+					minlength : "账号位数必须大于五"
+				},
+				name : {
+					required: "请输入昵称"
+					minlength: "昵称必须大于两个字符"
+				},
+				password : {
+					required : "请输入密码",
+					minlength : "密码长度不能小于 5 个字母"
+				},
+				repassword : {
+					required : "请再次输入密码",
+					minlength : "密码长度不能小于 5 个字母",
+					equalTo : "两次密码输入不一致"
+				},
+				email : "请输入一个正确的邮箱",
+			}
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="form row" style="width: 800px;">
+			<div class="form-horizontal" id="login_form">
+				<h3 class="form-title col-md-offset-3">注册</h3>
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div class="col col-sm-8">
+						<form class="form-horizontal" id="registerForm" action="/WEB05/register" method="post">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<i class="fa fa-user fa-lg"></i> <input type="text"
+										class="form-control" id="account" name="account" placeholder="账号">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<i class="fa fa-user fa-lg"></i> <input type="text"
+										class="form-control" id="name" name="name" placeholder="昵称">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<i class="fa fa-lock fa-lg"></i> <input type="password"
+										class="form-control" id="password" name="password"
+										placeholder="密码(6-16个字符组成,区分大小写)">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<i class="fa fa-lock fa-lg"></i> <input type="password"
+										class="form-control" id="repassword" name="repassword" placeholder="确认密码">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<i class="fa fa-envelope fa-lg"></i> <input type="email"
+										 class="form-control" name="email" id="mail"
+										placeholder="  邮箱地址">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8">
+									<input type="password" class="form-control" id="inputPassword3"
+										placeholder="验证码">
+								</div>
+								<div class="col-sm-4">
+									<button type="button" class="btn btn-default"
+										style="color: white;background-color:#1B6D85">获取验证码</button>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-10">
+									<button type="submit" class="btn btn-success" style="padding-left: 50px;padding-right: 50px;margin-left: 30px;">提交</button>							
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

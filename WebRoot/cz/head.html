@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>充值网</title>
+<!-- 标题栏： -->
+		<link rel="icon" href="https://www.easyicon.net/api/resizeApi.php?id=19315&size=128" type="image/x-icon">
+<!-- 收藏夹： -->
+		<link rel="shortcut icon" href="https://www.easyicon.net/api/resizeApi.php?id=19315&size=128" type="image/x-icon">
+		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../css/mycss.css">
+
+		<script type="text/javascript">
+			
+			$(function() {
+				var audio = document.getElementById('newSound');
+				if (audio !== null) {
+					audio.play();
+				}
+			})
+			
+			function music_swit() {
+				var value = $("#swit").attr("value");
+				var audio = $("#newSound")[0];
+				$("#swit").attr('src',"../img/"+value+".png");
+				if(audio != null && value=="play") {
+					audio.pause();
+					$("#swit").attr('value',"stop");
+				}else if(audio !=null && value=="stop"){
+					audio.play();
+					$("#swit").attr('value',"play");
+				}
+			}
+		</script>
+	</head>
+	<body style="background: url(../img/head.jpg);">
+		<audio id="newSound" controls="controls" autobuffer="autobuffer" hidden="hidden">
+			<source src="http://music.163.com/song/media/outer/url?id=1313107065.mp3" />
+		</audio>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4">
+					<marquee><font color="#1B6D85" face="Microsoft Yahei"style="font-size: 30px;">音乐:RISE&nbsp;&nbsp;(登峰造极境—英雄联盟2018全球总决赛主题曲)</font></marquee>
+				</div>
+				<div class="col-lg-4">
+					<abbr title="音乐开关"><img id="swit"  style="float: right; padding-top: 50px;" src="../img/stop.png" value="play" onclick="music_swit()" /></abbr>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="jumbotron" style="background-color: transparent;height: 250px;"></div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-offset-4 col-lg-4" style="text-align: center;float: ;">
+					<a class="btn btn-block" style="font-size: 30px;color: #449D44;"href="http://39.106.116.102/WEB05/cz/homepage.html" >进入官网</a>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
